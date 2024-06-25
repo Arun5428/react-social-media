@@ -1,0 +1,41 @@
+
+
+react router dom
+
+
+ <div className="App">
+
+      <nav>
+        <ul>
+      <li><Link to="/">home</Link></li>
+      <li><Link to="/about">About</Link></li>
+      <li><Link to="/newpost">New Post</Link> </li>
+      <li><Link to="/postpage"> Post Page</Link> </li>
+
+        </ul>
+      </nav>
+     <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/about" element={ <About/>}/>
+      <Route path="/newpost" element={ <NewPost/>}/>
+      <Route path="/postpage" element={<PostLayout/>}>
+         <Route index element={<PostPage/>}/>
+         <Route path=":id" element={ <Post/>}/>
+         <Route path="newpost" element={<Post/>}/>
+      </Route>
+      
+      
+
+
+      <Route path='*'element={<Missing/>}/>
+     </Routes>
+ {/* <Header/>
+ <Nav/>
+ <Home/>
+ <NewPost/>
+ <PostPage/>
+ <About/>
+ <Missing/>
+ <Footer/> */}
+
+    </div>
